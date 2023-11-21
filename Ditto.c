@@ -1,11 +1,26 @@
 #include<stdio.h>
 int main()
 {
-    int x,y,p;
+    int x,y,p,flag=1;
     scanf("%d%d%d",&x,&y,&p);
-    if((x-y)%(2*p) ==0)
+    if(y<x)
     {
-        printf("YES");
+        int t=x;
+        x=y;
+        y=t;
+    }
+    while(x<=y){
+    if(x==y)
+    {
+        flag=0;
+        break;
+    }
+    x=x+p;
+    y=y-p;
+    }
+    if(flag==0)
+    {
+        printf("YES"); 
     }
     else
     {
